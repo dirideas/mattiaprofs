@@ -4,87 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Overview | VidiNini</title>
-    <style>
-        :root {
-            --primary-green: #2ecc71;
-            --dark-green: #1b5e20;
-            --light-bg: #f4f7f4;
-            --white: #ffffff;
-            --text-dark: #2c3e50;
-        }
-
-        body { 
-            font-family: 'Segoe UI', sans-serif; 
-            margin: 0; 
-            background-color: var(--light-bg); 
-            color: var(--text-dark);
-        }
-
-        nav { 
-            padding: 1rem; 
-            background: var(--white); 
-            border-bottom: 1px solid #ddd; 
-            display: flex; 
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo { font-weight: bold; color: var(--dark-green); text-decoration: none; font-size: 1.2rem; }
-
-        .container { 
-            max-width: 1000px; 
-            margin: 2rem auto; 
-            padding: 0 1rem; 
-        }
-
-        .header-actions {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-
-        .upload-card {
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 10px;
-            border: 2px dashed var(--primary-green);
-            text-align: center;
-            transition: background 0.3s;
-        }
-
-        .upload-card:hover {
-            background: #eef9f2;
-        }
-
-        .btn-small {
-            background: var(--primary-green);
-            color: white;
-            padding: 8px 16px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 0.9rem;
-        }
-    </style>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
-    <nav>
-        <a href="../" class="logo">VidiNini</a>
-        <span>Welkom, Tamanini</span>
+    <nav class="nav-overview">
+        <a href="../index.html">VidiNini</a>
+        <span>Welkom, <strong>Tamanini</strong></span>
     </nav>
 
-    <div class="container">
-        <div class="header-actions">
-            <h2>Mijn Video's</h2>
-            <a href="#" class="btn-small">+ Nieuwe Video</a>
-        </div>
+    <div class="main-content">
+        <div class="container">
+            <div class="header-actions">
+                <h2>Mijn Video's</h2>
+                <a href="#" class="cta-button" style="padding: 10px 20px; font-size: 0.9rem;">+ Nieuwe Video</a>
+            </div>
 
-        <div class="upload-card">
-            <p>Je hebt nog geen video's geüpload.</p>
-            <p><small>Sleep een bestand hierheen of klik op de knop hierboven.</small></p>
+            <div class="upload-card">
+                <p>Je hebt nog geen video's geüpload.</p>
+                <p><small>Sleep een bestand hierheen of klik op de knop hierboven.</small></p>
+            </div>
         </div>
     </div>
+
+    <div class="contact-bar">
+        <a href="mailto:contact@vidinini.com">Contact</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 VidiNini by Tamanini. Onderdeel van Azerion.</p>
+    </footer>
 
 </body>
 </html>
