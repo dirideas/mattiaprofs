@@ -1,91 +1,48 @@
-/* --- Login Pagina Specifieke Styling --- */
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inloggen | VidiNini</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
 
-/* Centreert de login kaart verticaal en horizontaal */
-.flex-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem 1.5rem;
-}
+    <div id="sidebar-container" data-include="sidebarwidget.html"></div>
 
-/* De witte inlog-box */
-.login-card {
-    background: var(--white);
-    padding: 3rem 2.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-    border-top: 5px solid var(--primary-green);
-}
+    <nav class="nav-overview">
+        <a href="index.html">VidiNini</a>
+    </nav>
 
-.login-card h2 {
-    margin-top: 0;
-    border-bottom: none; /* Overschrijft de groene lijn onder h2 van de landingpage */
-    padding-bottom: 0;
-    margin-bottom: 5px;
-}
+    <div class="main-content flex-center">
+        <div class="login-card">
+            <h2>Welkom terug</h2>
+            <p>Log in om je video's te beheren.</p>
+            
+            <form action="overview/index.html">
+                <div class="form-group">
+                    <label for="email">E-mailadres</label>
+                    <input type="email" id="email" name="email" placeholder="naam@.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Wachtwoord</label>
+                    <input type="password" id="password" name="password" placeholder="••••••••" required>
+                </div>
+                
+                <button type="submit" class="cta-button full-width">Inloggen</button>
+            </form>
 
-.login-card p {
-    color: #666;
-    margin-bottom: 2rem;
-    font-size: 0.95rem;
-}
+            <div class="login-links">
+                <a href="#">Wachtwoord vergeten?</a>
+            </div>
+        </div>
+    </div>
 
-/* Formulier velden */
-.form-group {
-    margin-bottom: 1.5rem;
-    text-align: left;
-}
+    <div id="footer-container" data-include="footer.html"></div>
+    
+    <script src="includes.js"></script>
 
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: var(--dark-green);
-    font-size: 0.9rem;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-    box-sizing: border-box; /* Zorgt dat padding de breedte niet breekt */
-    transition: border-color 0.3s, box-shadow 0.3s;
-    font-family: inherit;
-}
-
-.form-group input:focus {
-    outline: none;
-    border-color: var(--primary-green);
-    box-shadow: 0 0 5px rgba(46, 204, 113, 0.3);
-}
-
-/* Maakt de login knop net zo breed als de kaart */
-.full-width {
-    width: 100%;
-    box-sizing: border-box;
-    cursor: pointer;
-    border: none;
-    font-size: 1.1rem;
-    margin-top: 10px;
-}
-
-.login-links {
-    margin-top: 1.5rem;
-    font-size: 0.85rem;
-}
-
-.login-links a {
-    color: var(--navy-accent);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.login-links a:hover {
-    color: var(--primary-green);
-    text-decoration: underline;
-}
+</body>
+</html>
