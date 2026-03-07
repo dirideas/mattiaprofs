@@ -156,3 +156,10 @@ footer p {
     text-decoration: none;
     font-weight: bold;
 }
+
+/* Styling voor het scheidingsteken in de footer */
+.footer-separator {
+    color: var(--white);
+    margin: 0 15px;
+    opacity: 0.5;
+}

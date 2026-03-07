@@ -5,26 +5,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Overview | VidiNini</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="overview.css">
 </head>
 <body>
     <div id="sidebar-container" data-include="sidebarwidget.html"></div>
 
     <nav class="nav-overview">
-        <a href="./index.html">VidiNini</a>
-        <span>Welkom, <strong>Tamanini</strong></span>
+        <a href="overview.html">VidiNini</a>
+        <span>Welkom, <strong>Gebruiker</strong></span>
     </nav>
 
     <div class="main-content">
-        <div class="container">
+        <div class="container dashboard-container">
             <div class="header-actions">
-                <h2>Mijn Video's</h2>
-                <a href="#" class="cta-button" style="padding: 10px 20px; font-size: 0.9rem;">+ Nieuwe Video</a>
+                <h2>Mijn Dashboard</h2>
+                <a href="upload.html" class="cta-button" style="padding: 10px 20px; font-size: 0.9rem;">+ Nieuwe Video</a>
             </div>
 
-            <div class="upload-card">
-                <p>Je hebt nog geen video's geüpload.</p>
-                <p><small>Sleep een bestand hierheen of klik op de knop hierboven.</small></p>
+            <div class="dashboard-card">
+                <h3>Prestaties per video</h3>
+                <div class="table-responsive">
+                    <table class="video-stats-table">
+                        <thead>
+                            <tr>
+                                <th>Video</th>
+                                <th>Weergaven</th>
+                                <th>Kliks</th>
+                                <th>Conversie</th>
+                                <th>Omzet</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="video-thumb-row">
+                                        <div class="thumb-placeholder"></div>
+                                        <span>Zomer_Campagne_26.mp4</span>
+                                    </div>
+                                </td>
+                                <td>12.450</td>
+                                <td>840</td>
+                                <td>6.7%</td>
+                                <td>€ 145,20</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="video-thumb-row">
+                                        <div class="thumb-placeholder"></div>
+                                        <span>Product_Demo_V2.mov</span>
+                                    </div>
+                                </td>
+                                <td>8.200</td>
+                                <td>310</td>
+                                <td>3.7%</td>
+                                <td>€ 89,50</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="video-thumb-row">
+                                        <div class="thumb-placeholder"></div>
+                                        <span>Tutorial_Stap1.mp4</span>
+                                    </div>
+                                </td>
+                                <td>45.100</td>
+                                <td>4.200</td>
+                                <td>9.3%</td>
+                                <td>€ 612,00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
+
+            <div class="dashboard-card">
+                <div class="graph-header">
+                    <h3>Revenue</h3>
+                    <div class="graph-filters">
+                        <select id="video-filter" class="filter-select">
+                            <option value="all">Alle Video's</option>
+                            <option value="zomer26">Zomer_Campagne_26.mp4</option>
+                            <option value="demo2">Product_Demo_V2.mov</option>
+                            <option value="tutorial">Tutorial_Stap1.mp4</option>
+                        </select>
+                        <select id="time-filter" class="filter-select">
+                            <option value="today">Vandaag</option>
+                            <option value="7days">7 dagen</option>
+                            <option value="30days">30 dagen</option>
+                            <option value="thismonth">Huidige maand</option>
+                            <option value="thisyear">Dit jaar</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="graph-placeholder">
+                    <svg viewBox="0 0 500 100" class="revenue-graph" preserveAspectRatio="none">
+                        <polyline fill="none" stroke="var(--primary-green)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                            points="0,80 50,70 100,85 150,50 200,40 250,60 300,70 350,55 400,65 450,30 500,20" />
+                        <polyline fill="var(--primary-green)" opacity="0.1" stroke="none"
+                            points="0,100 0,80 50,70 100,85 150,50 200,40 250,60 300,70 350,55 400,65 450,30 500,20 500,100" />
+                    </svg>
+                </div>
+            </div>
+
         </div>
     </div>
 
