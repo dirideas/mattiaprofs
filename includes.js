@@ -23,3 +23,28 @@ function loadIncludes() {
 
 // Voer het script uit zodra de hoofd-HTML van de pagina geladen is
 document.addEventListener('DOMContentLoaded', loadIncludes);
+
+//widget close on click logic
+// Luister naar alle kliks op de hele pagina
+document.addEventListener('click', function (event) {
+    const sidebar = document.getElementById('vidiSidebar');
+
+    // Controleer of de sidebar überhaupt op de pagina staat
+    if (!sidebar) return;
+
+    // Check of de sidebar momenteel open is
+    if (sidebar.classList.contains('expanded')) {
+
+        // Controleer of de klik BINNEN de sidebar was
+        const isClickInsideSidebar = sidebar.contains(event.target);
+
+        // Controleer of de klik op de hamburger/dashboard knop was
+        const isClickOnToggle = event.target.closest('.sidebar-toggle');
+
+        // Als de klik NIET in de sidebar was en NIET op de knop...
+        if (!isClickInsideSidebar && !isClickOnToggle) {
+            // ...sluit dan de sidebar!
+            sidebar.classList.remove('expanded');
+        }
+    }
+});
