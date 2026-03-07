@@ -156,3 +156,71 @@ footer p {
     font-weight: bold;
 }
 
+/* Sidebar Widget (Rechts uitgelijnd & Korter) */
+.sidebar-widget {
+    position: fixed;
+    top: 0px; /* Of de waarde die je net hebt gekozen */
+    right: -250px; 
+    width: 250px;
+    height: 1080px; /* Zorgt dat hij meeschaalt met de inhoud in plaats van 100vh */
+    min-height: 250px; /* Zorgt dat hij niet te kort wordt */
+    padding-bottom: 20px; /* Extra ruimte onder de knoppen */
+    border-radius: 10px 0 0 10px; /* Maakt de hoeken links mooi rond */
+    background-color: var(--navy-accent);
+    transition: right 0.3s ease; 
+    z-index: 1000; /* Iets verlaagd zodat de footer eroverheen kan */
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px; 
+    box-shadow: -2px 5px 15px rgba(0,0,0,0.3); 
+}
+
+/* This class is added via JavaScript to slide the menu in */
+.sidebar-widget.expanded {
+    right: 0;
+}
+
+/* The green toggle button that is always visible */
+.sidebar-toggle {
+    position: absolute;
+    top: 58px;
+    left: -50px; /* Pushes the button out to the left of the hidden navy panel */
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-green);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 5px 0 0 5px; /* Rounded on the left, flat on the right */
+    box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.sidebar-toggle:hover {
+    background-color: var(--navy-accent);
+}
+
+/* The clickable buttons inside the sidebar */
+.sidebar-link {
+    color: var(--white);
+    text-decoration: none;
+    padding: 15px 25px;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background 0.2s, color 0.2s;
+}
+
+.sidebar-link:hover {
+    background-color: var(--primary-green);
+    color: var(--white);
+}
+
+/* Zorgt dat de footer en contact-bar over de widget heen vallen bij het scrollen */
+.contact-bar, footer {
+    position: relative;
+    z-index: 2000; 
+}
