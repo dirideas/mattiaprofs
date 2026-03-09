@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Aanmaken | VidiNini</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <div id="sidebar-container" data-include="sidebarwidget.html"></div>
+
+    <nav class="nav-overview">
+        <a href="index.html">VidiNini</a>
+    </nav>
+
+    <div class="main-content flex-center">
+        <div class="login-card">
+            <h2>Account aanmaken</h2>
+            <p>Vul je gegevens in om een nieuw account te registreren.</p>
+            
+            <form action="login.html" onsubmit="return validatePasswords(event)">
+                <div class="form-group">
+                    <label for="voornaam">Voornaam</label>
+                    <input type="text" id="voornaam" name="voornaam" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="achternaam">Achternaam</label>
+                    <input type="text" id="achternaam" name="achternaam" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="publishernaam">Publishernaam (Loginnaam)</label>
+                    <input type="text" id="publishernaam" name="publishernaam" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">E-mailadres</label>
+                    <input type="email" id="email" name="email" placeholder="naam@.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Wachtwoord</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="password" name="password" placeholder="••••••••" required>
+                        <span class="toggle-password" onclick="togglePasswordVisibility('password', this)">👁️</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password_repeat">Herhaal wachtwoord</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="password_repeat" name="password_repeat" placeholder="••••••••" required>
+                        <span class="toggle-password" onclick="togglePasswordVisibility('password_repeat', this)">👁️</span>
+                    </div>
+                    <small id="password-error" style="color: red; display: none; margin-top: 5px; font-weight: bold;">Wachtwoorden komen niet overeen.</small>
+                </div>
+                
+                <button type="submit" class="cta-button full-width">Account aanmaken</button>
+            </form>
+
+            <div class="login-links">
+                <a href="login.html">Heb je al een account? Log in</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-container" data-include="footer.html"></div>
+    
+    <script src="includes.js"></script>
+    <script>
+        function validatePasswords(event) {
+            const password = document.getElementById('password').value;
+            const passwordRepeat = document.getElementById('password_repeat').value;
+            const errorText = document.getElementById('password-error');
+
+            if (password !== passwordRepeat) {
+                event.preventDefault();
+                errorText.style.display = 'block';
+                return false;
+            }
+            
+            errorText.style.display = 'none';
+            return true;
+        }
+
+        function togglePasswordVisibility(inputId, icon) {
+            const input = document.getElementById(inputId);
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.textContent = '🙈'; 
+            } else {
+                input.type = 'password';
+                icon.textContent = '👁️';
+            }
+        }
+    </script>
+</body>
+</html>
