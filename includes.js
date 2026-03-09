@@ -48,3 +48,53 @@ document.addEventListener('click', function (event) {
         }
     }
 });
+
+// --- Modal Functies voor Uitloggen ---
+
+function toonUitlogModal(event) {
+    event.preventDefault(); 
+    const modal = document.getElementById('logoutModal');
+    if (modal) {
+        modal.style.display = 'flex'; 
+    }
+}
+
+function sluitUitlogModal() {
+    const modal = document.getElementById('logoutModal');
+    if (modal) {
+        modal.style.display = 'none'; 
+    }
+}
+
+function bevestigUitloggen() {
+    // Gaat correct naar login.html, onafhankelijk van in welke map je zit
+    const basePath = window.location.pathname.includes('/overview/') ? '../' : '';
+    window.location.href = basePath + 'login.html'; 
+}
+
+function toonUitlogModal(event) {
+    event.preventDefault(); 
+    
+    // Sluit de sidebar
+    const sidebar = document.getElementById('vidiSidebar');
+    if (sidebar) {
+        sidebar.classList.remove('expanded');
+    }
+
+    // Toon de modal in het midden
+    const modal = document.getElementById('logoutModal');
+    if (modal) {
+        modal.style.display = 'flex'; 
+    }
+}
+
+function sluitUitlogModal() {
+    const modal = document.getElementById('logoutModal');
+    if (modal) {
+        modal.style.display = 'none'; 
+    }
+}
+
+function bevestigUitloggen() {
+    window.location.href = 'login.html'; 
+}

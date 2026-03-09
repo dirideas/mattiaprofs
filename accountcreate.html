@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <div id="sidebar-container" data-include="sidebarwidget.html"></div>
+    <!-- <div id="sidebar-container" data-include="sidebarwidget.html"></div> -->
 
     <nav class="nav-overview">
         <a href="index.html">VidiNini</a>
@@ -20,7 +20,7 @@
             <h2>Account aanmaken</h2>
             <p>Vul je gegevens in om een nieuw account te registreren.</p>
             
-            <form action="login.html" onsubmit="return validatePasswords(event)">
+            <form action="accountcreatesucces.html" onsubmit="return validatePasswords(event)">
                 <div class="form-group">
                     <label for="voornaam">Voornaam</label>
                     <input type="text" id="voornaam" name="voornaam" required>
@@ -83,6 +83,7 @@
             }
             
             errorText.style.display = 'none';
+            // Als alles klopt, returnt de functie true en gaat de browser automatisch naar de action URL
             return true;
         }
 
