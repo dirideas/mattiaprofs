@@ -66,3 +66,71 @@
     position: relative;
     z-index: 2000; 
 }
+
+/* --- Overlay / Modal Styling --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6); /* Donkere, halfdoorzichtige achtergrond */
+    z-index: 3000; /* Zorgt dat het over de sidebar heen valt */
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(128, 128, 128, 0.7); /* Doorzichtig grijs */
+    z-index: 9999;
+    /* display: none; blijft in HTML, JS maakt er 'flex' van */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: var(--white, #ffffff);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 90%;
+    max-width: 350px;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    color: var(--dark-green, #333);
+    margin-bottom: 0.5rem;
+}
+
+.modal-content p {
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.modal-actions .cta-button {
+    min-width: 80px;
+}
+
+.modal-actions .outline-button {
+    background: transparent;
+    border: 2px solid var(--primary-green);
+    color: var(--primary-green);
+}
+
+.modal-actions .outline-button:hover {
+    background: var(--primary-green);
+    color: var(--white);
+}
