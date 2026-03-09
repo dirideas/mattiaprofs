@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wachtwoord Herstellen | VidiNini</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <div id="sidebar-container" data-include="sidebarwidget.html"></div>
+
+    <nav class="nav-overview">
+        <a href="index.html">VidiNini</a>
+    </nav>
+
+    <div class="main-content flex-center">
+        <div class="login-card">
+            <h2>Wachtwoord vergeten?</h2>
+            <p>Vul je e-mailadres in en we sturen je een link om je wachtwoord opnieuw in te stellen.</p>
+
+            <form id="recovery-form" onsubmit="return checkEmailExists(event)">
+                <div class="form-group">
+                    <label for="email">E-mailadres</label>
+                    <input type="email" id="email" name="email" placeholder="naam@.com" required>
+                    <small id="email-error" style="color: red; display: none; margin-top: 5px; font-weight: bold;">Dit
+                        e-mailadres is niet bij ons bekend.</small>
+                    <small id="email-success"
+                        style="color: green; display: none; margin-top: 5px; font-weight: bold;">Herstellink verstuurd
+                        naar dit e-mailadres.</small>
+                </div>
+
+                <button type="submit" class="cta-button full-width">Stuur herstellink</button>
+            </form>
+
+            <div class="login-links">
+                <a href="login.html">Terug naar inloggen</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-container" data-include="footer.html"></div>
+
+    <script src="includes.js"></script>
+    <script>
+        // Simulatie van een database voor het prototype
+        const bestaandeGebruikers = [
+            "test@vidinini.com",
+            "demo@vidinini.com",
+            "tamanini@vidinini.com"
+        ];
+
+        function checkEmailExists(event) {
+            event.preventDefault();
+
+            const ingevoerdeEmail = document.getElementById('email').value.toLowerCase();
+            const errorText = document.getElementById('email-error');
+
+            errorText.style.display = 'none';
+
+            // Controleert of de ingevoerde waarde voorkomt in de array
+            if (bestaandeGebruikers.includes(ingevoerdeEmail)) {
+                // Stuur de gebruiker door naar de succes-pagina
+                window.location.href = 'recoverysucces.html';
+            } else {
+                errorText.style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+
+</html>
